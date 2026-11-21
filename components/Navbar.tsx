@@ -39,7 +39,7 @@ export default function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="container-x flex h-[100px] items-center justify-between">
+      <nav className="container-x flex h-[72px] items-center justify-between lg:h-[100px]">
         <motion.a
           href="#top"
           aria-label={`${COMPANY.name} — home`}
@@ -47,7 +47,7 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Logo navbar className="h-[76px] w-auto md:h-[88px]" />
+          <Logo navbar className="h-[52px] w-auto lg:h-[88px]" />
         </motion.a>
 
         <ul className="hidden items-center gap-9 lg:flex">

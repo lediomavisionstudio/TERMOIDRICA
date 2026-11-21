@@ -52,7 +52,7 @@ export default function Gallery() {
   const current = lightbox !== null ? items[lightbox] : null;
 
   return (
-    <section id="lavori" className="relative py-20 sm:py-28">
+    <section id="lavori" className="relative py-14 sm:py-24">
       <div className="container-x">
         <SectionHeading
           eyebrow="I nostri lavori"

@@ -81,7 +81,7 @@ function TiltCard({ service, accent }: { service: Service; accent: (typeof ACCEN
 
 export default function Services() {
   return (
-    <section id="servizi" className="relative bg-mist py-20 sm:py-28">
+    <section id="servizi" className="relative bg-mist py-14 sm:py-24">
       <div className="container-x">
         <SectionHeading
           eyebrow="Cosa facciamo"

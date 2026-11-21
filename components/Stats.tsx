@@ -55,7 +55,7 @@ export default function Stats() {
       <div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-fire-500/15 blur-[100px]" />
       <div className="pointer-events-none absolute -left-16 bottom-10 h-64 w-64 rounded-full bg-teal-500/15 blur-[100px]" />
 
-      <div className="container-x relative py-24 sm:py-28">
+      <div className="container-x relative py-16 sm:py-24">
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
           {STATS.map((stat, i) => (
             <StatItem key={stat.label} stat={stat} index={i} />

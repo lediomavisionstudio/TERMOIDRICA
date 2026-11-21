@@ -34,7 +34,7 @@ function Stars({ rating }: { rating: number }) {
 
 export default function Testimonials() {
   return (
-    <section id="recensioni" className="relative overflow-hidden bg-mist py-20 sm:py-28">
+    <section id="recensioni" className="relative overflow-hidden bg-mist py-14 sm:py-24">
       {/* Virgolette giganti decorative */}
       <span
         className="pointer-events-none absolute -top-10 left-4 select-none font-display text-[22rem] leading-none text-deep-500/5"

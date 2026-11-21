@@ -56,7 +56,7 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-900 pt-[100px]"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-900 pt-[72px] lg:pt-[100px]"
     >
       {/* Sfondo con parallax */}
       <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0">
@@ -80,7 +80,7 @@ export default function Hero() {
       {/* Contenuto */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="container-x relative z-10 py-20"
+        className="container-x relative z-10 py-12 sm:py-20"
       >
         <motion.div
           variants={container}
@@ -89,7 +89,7 @@ export default function Hero() {
           className="max-w-2xl"
         >
           {/* Titolo con reveal parola per parola */}
-          <h1 className="font-display text-5xl font-semibold uppercase leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-[2.6rem] font-semibold uppercase leading-[1.02] tracking-tight text-white sm:text-6xl sm:leading-[0.98] lg:text-7xl">
             <span className="flex flex-wrap gap-x-4">
               {TITLE_WORDS.map((w, i) => (
                 <span key={i} className="overflow-hidden py-0.5">
@@ -111,7 +111,7 @@ export default function Hero() {
 
           <motion.p
             variants={wordUp}
-            className="mt-7 max-w-xl text-lg font-sans normal-case leading-relaxed text-white/75"
+            className="mt-5 max-w-xl text-base font-sans normal-case leading-relaxed text-white/75 sm:mt-7 sm:text-lg"
           >
             {COMPANY.name} di {COMPANY.owner} realizza impianti idraulici,
             termici e di climatizzazione per privati e aziende in tutta la{" "}
@@ -119,7 +119,7 @@ export default function Hero() {
           </motion.p>
 
           {/* Bullet points con icone custom */}
-          <motion.ul variants={wordUp} className="mt-9 space-y-3.5">
+          <motion.ul variants={wordUp} className="mt-7 space-y-3 sm:mt-9 sm:space-y-3.5">
             {POINTS.map((p) => (
               <li key={p.label} className="flex items-center gap-3.5 text-white/90">
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${p.color}`}>
@@ -133,14 +133,14 @@ export default function Hero() {
           </motion.ul>
 
           {/* CTA */}
-          <motion.div variants={wordUp} className="mt-11 flex flex-wrap items-center gap-4">
-            <a href="#contatti" className="btn-fire text-base">
+          <motion.div variants={wordUp} className="mt-9 flex flex-col gap-3 sm:mt-11 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <a href="#contatti" className="btn-fire w-full justify-center text-base sm:w-auto">
               Richiedi un preventivo
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
                 <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="btn-ghost-light text-base">
+            <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="btn-ghost-light w-full justify-center text-base sm:w-auto">
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
                 <path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2a12 12 0 0 1-6-6l2-2-2-5-4 2Z" strokeLinejoin="round" />
               </svg>

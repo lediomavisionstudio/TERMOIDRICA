@@ -48,7 +48,7 @@ export default function About() {
   const imageY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
 
   return (
-    <section id="storia" className="relative py-20 sm:py-28">
+    <section id="storia" className="relative py-14 sm:py-24">
       <div className="container-x">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Image side */}

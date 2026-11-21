@@ -8,37 +8,25 @@
   --font-space: "Space Grotesk", monospace;
 }
 
-/* Lenis smooth scroll (see components/LenisProvider.tsx) */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
 @layer base {
   html {
-    /* Lenis gestisce lo smooth scroll via JS; nativo su auto per evitare conflitti */
-    scroll-behavior: auto;
+    /* Smooth scroll nativo del browser + offset per la navbar fissa
+       (72px su mobile, 100px da desktop). Affidabile su tutti i dispositivi. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
   }
-
-  html {
-    /* Impedisce qualsiasi scroll orizzontale / spazio bianco laterale
-       causato da elementi decorativi posizionati fuori schermo. */
-    overflow-x: clip;
+  @media (min-width: 1024px) {
+    html {
+      scroll-padding-top: 112px;
+    }
   }
 
   body {
     @apply bg-white text-ink font-sans antialiased;
-    overflow-x: clip;
-    max-width: 100vw;
+    /* NB: l'overflow-x va SOLO sul body, mai su <html>: metterlo su <html>
+       rompe lo smooth scroll / scrollTo (Lenis e nativo). Lo scroll laterale
+       è comunque già eliminato alla fonte (overflow-hidden sulle sezioni). */
+    overflow-x: hidden;
   }
 
   h1,

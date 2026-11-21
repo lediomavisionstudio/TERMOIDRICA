@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Oswald, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { COMPANY, SITE_URL } from "@/lib/data";
-import LenisProvider from "@/app/providers/LenisProvider";
 import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
@@ -141,7 +140,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <LenisProvider>{children}</LenisProvider>
+        {children}
         <CookieBanner />
       </body>
     </html>

@@ -33,7 +33,7 @@ function StatItem({ stat, index }: { stat: Stat; index: number }) {
 
 export default function Stats() {
   return (
-    <section id="numeri" className="relative bg-night-gradient">
+    <section id="numeri" className="relative overflow-hidden bg-night-gradient">
       {/* Wave divider top (dal bianco/About) */}
       <div className="absolute inset-x-0 top-0 -translate-y-px leading-[0]">
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="h-[50px] w-full sm:h-[70px]" aria-hidden>

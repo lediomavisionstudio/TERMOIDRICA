@@ -29,9 +29,16 @@ html.lenis body {
     scroll-behavior: auto;
   }
 
+  html {
+    /* Impedisce qualsiasi scroll orizzontale / spazio bianco laterale
+       causato da elementi decorativi posizionati fuori schermo. */
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-white text-ink font-sans antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
+    max-width: 100vw;
   }
 
   h1,

@@ -171,7 +171,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/60"
+        className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/60 sm:flex"
       >
         <span className="text-[10px] font-semibold uppercase tracking-[0.25em]">Scopri</span>
         <span className="flex h-9 w-5.5 justify-center rounded-full border border-white/40 p-1" style={{ width: 22 }}>

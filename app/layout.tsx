@@ -3,6 +3,7 @@ import { Inter, Oswald, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { COMPANY, SITE_URL } from "@/lib/data";
 import LenisProvider from "@/app/providers/LenisProvider";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -141,6 +142,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LenisProvider>{children}</LenisProvider>
+        <CookieBanner />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { COMPANY } from "@/lib/data";
 
@@ -52,16 +52,30 @@ export default function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
+  // Il parallax (trasformazioni legate allo scroll) è costoso su mobile e causa
+  // lag: lo attiviamo solo da desktop (>=768px). Su mobile l'hero resta statico.
+  const [parallax, setParallax] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setParallax(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   return (
     <section
       id="top"
       ref={ref}
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-900 pt-[72px] lg:pt-[100px]"
     >
-      {/* Sfondo con parallax */}
-      <motion.div style={{ y: bgY, scale: bgScale }} className="absolute inset-0">
+      {/* Sfondo con parallax (solo desktop) */}
+      <motion.div
+        style={parallax ? { y: bgY, scale: bgScale } : undefined}
+        className="absolute inset-0"
+      >
         <Image
-          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80"
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1600&q=70"
           alt="Tecnico Termoidrica GS al lavoro"
           fill
           sizes="100vw"
@@ -73,13 +87,13 @@ export default function Hero() {
       {/* Overlay: scuro a sinistra + gradiente dal basso (night) verso trasparente */}
       <div className="absolute inset-0 bg-gradient-to-r from-night-900/92 via-night-900/55 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-night-900 via-night-900/15 to-transparent" />
-      {/* Bagliore caldo in basso a destra */}
-      <div className="pointer-events-none absolute -bottom-32 -right-24 h-96 w-96 rounded-full bg-fire-500/20 blur-[120px]" />
-      <div className="pointer-events-none absolute top-24 right-1/3 h-80 w-80 rounded-full bg-teal-500/10 blur-[120px]" />
+      {/* Bagliore caldo (blur pesante: nascosto su mobile per performance) */}
+      <div className="pointer-events-none absolute -bottom-32 -right-24 hidden h-96 w-96 rounded-full bg-fire-500/20 blur-[120px] sm:block" />
+      <div className="pointer-events-none absolute top-24 right-1/3 hidden h-80 w-80 rounded-full bg-teal-500/10 blur-[120px] sm:block" />
 
       {/* Contenuto */}
       <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
+        style={parallax ? { y: contentY, opacity: contentOpacity } : undefined}
         className="container-x relative z-10 py-12 sm:py-20"
       >
         <motion.div

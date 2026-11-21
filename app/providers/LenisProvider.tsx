@@ -6,9 +6,10 @@ import Lenis from "lenis";
 import { useEffect } from "react";
 
 /**
- * Smooth scrolling app-wide con Lenis.
- * Config: lerp 0.08, duration 1.2, easing esponenziale.
- * Gli anchor "#..." della navbar restano funzionanti (scrollTo di Lenis).
+ * Smooth scrolling con Lenis SOLO su desktop con mouse.
+ * Su mobile/touch lo smooth scroll viene DISATTIVATO: lo scroll nativo del
+ * telefono è più fluido e non lagga (Lenis gira un RAF continuo e intercetta
+ * il touch). Gli anchor "#..." restano fluidi anche su mobile via scroll nativo.
  * Rispetta prefers-reduced-motion.
  */
 export default function LenisProvider({
@@ -20,8 +21,35 @@ export default function LenisProvider({
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (prefersReduced) return;
 
+    // Lenis solo su schermi grandi con puntatore fine (desktop/mouse).
+    const isDesktop =
+      window.matchMedia("(min-width: 1024px)").matches &&
+      window.matchMedia("(pointer: fine)").matches;
+
+    // Offset per la navbar fissa (72px mobile, 100px desktop)
+    const navOffset = window.matchMedia("(min-width: 1024px)").matches ? 100 : 72;
+
+    // --- Mobile / touch / reduced motion: niente Lenis, solo anchor nativi ---
+    if (prefersReduced || !isDesktop) {
+      const onClick = (e: MouseEvent) => {
+        const target = (e.target as HTMLElement)?.closest<HTMLAnchorElement>(
+          'a[href^="#"]'
+        );
+        if (!target) return;
+        const id = target.getAttribute("href");
+        if (!id || id === "#") return;
+        const el = document.querySelector(id) as HTMLElement | null;
+        if (!el) return;
+        e.preventDefault();
+        const top = el.getBoundingClientRect().top + window.scrollY - navOffset;
+        window.scrollTo({ top, behavior: "smooth" });
+      };
+      document.addEventListener("click", onClick);
+      return () => document.removeEventListener("click", onClick);
+    }
+
+    // --- Desktop: Lenis smooth scroll ---
     const lenis = new Lenis({
       lerp: 0.08,
       duration: 1.2,
@@ -36,7 +64,6 @@ export default function LenisProvider({
     };
     rafId = requestAnimationFrame(raf);
 
-    // Anchor links "#..." → smooth scroll via Lenis (offset per la navbar fissa)
     const onClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement)?.closest<HTMLAnchorElement>(
         'a[href^="#"]'
@@ -47,7 +74,7 @@ export default function LenisProvider({
       const el = document.querySelector(id);
       if (!el) return;
       e.preventDefault();
-      lenis.scrollTo(el as HTMLElement, { offset: -100 });
+      lenis.scrollTo(el as HTMLElement, { offset: -navOffset });
     };
     document.addEventListener("click", onClick);
 

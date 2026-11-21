@@ -16,8 +16,8 @@ export const COMPANY = {
   address: "Via Torre a Mare 26/28, 70016 Noicattaro (BA)",
   hours: "Lun–Sab 8:00–19:00 · Pronto intervento 7/7",
   social: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
+    instagram: "https://www.instagram.com/termoidricags",
+    facebook: "https://www.facebook.com/profile.php?id=61585839161219",
   },
 };
 

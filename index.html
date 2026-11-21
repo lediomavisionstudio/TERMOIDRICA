@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termoidrica GS — Impianti Termoidraulici in Puglia | Gerardo Settanni</title>
+<meta name="description" content="Termoidrica GS di Gerardo Settanni: installazione e manutenzione di caldaie, impianti idraulici, climatizzazione e solare termico in Puglia. Preventivo gratuito e pronto intervento.">
+<link rel="icon" href="public/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#c2410c;
+  --accent-soft:#f0e5df;
+  --ink:#16181d;
+  --ink-2:#4a4f5a;
+  --muted:#8a8f99;
+  --line:#e7e4df;
+  --paper:#faf8f5;
+  --paper-2:#f3f0eb;
+  --card:#ffffff;
+  --shadow:0 1px 2px rgba(22,24,29,.04),0 12px 32px -16px rgba(22,24,29,.12);
+  --radius:4px;
+  --maxw:1180px;
+}
+:root[data-theme="dark"]{
+  --accent:#e8763f;--accent-soft:#2a211c;--ink:#f2efea;--ink-2:#b6bcc8;--muted:#7e8491;
+  --line:#272b33;--paper:#111318;--paper-2:#171a20;--card:#181b22;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 20px 44px -22px rgba(0,0,0,.7);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --accent:#e8763f;--accent-soft:#2a211c;--ink:#f2efea;--ink-2:#b6bcc8;--muted:#7e8491;
+    --line:#272b33;--paper:#111318;--paper-2:#171a20;--card:#181b22;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 20px 44px -22px rgba(0,0,0,.7);
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);
+  line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .5s ease,color .5s ease;
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+.wrap{width:min(var(--maxw),90%);margin-inline:auto}
+section{padding:clamp(5rem,11vw,9rem) 0}
+.eyebrow{
+  font-family:'Inter';font-weight:600;text-transform:uppercase;letter-spacing:.22em;
+  font-size:.74rem;color:var(--accent);display:inline-block;margin-bottom:1.4rem;
+}
+.h-section{font-size:clamp(2.1rem,4.6vw,3.4rem);max-width:16ch;margin-bottom:1.2rem}
+.lead{color:var(--ink-2);font-size:1.08rem;max-width:52ch}
+.center{text-align:center}
+.center .h-section,.center .lead{margin-inline:auto}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;font-family:'Inter';font-weight:600;
+  font-size:.95rem;padding:.9rem 1.6rem;border-radius:var(--radius);cursor:pointer;
+  border:1px solid transparent;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,border-color .3s;
+}
+.btn svg{width:17px;height:17px;transition:transform .3s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--accent);color:#fff}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{filter:brightness(1.08)}
+.nav{position:sticky;top:0;z-index:999;background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand img{height:42px;width:42px;border-radius:var(--radius);object-fit:cover}
+.brand .bt{display:flex;flex-direction:column;line-height:1.1}
+.brand .bt b{font-family:'Fraunces';font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.brand .bt span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.92rem;color:var(--ink-2);font-weight:500;position:relative;transition:color .25s}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--accent);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-r{display:flex;align-items:center;gap:1rem}
+.tt{width:40px;height:40px;border-radius:var(--radius);border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .25s,transform .4s}
+.tt:hover{border-color:var(--ink)}
+.tt svg{width:18px;height:18px}
+.nav-cta{padding:.65rem 1.2rem;font-size:.9rem}
+.burger{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:var(--radius);background:transparent;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.burger span{width:18px;height:1.5px;background:var(--ink);transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.hero{padding:clamp(4rem,9vw,7rem) 0 clamp(4rem,8vw,6rem);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:500;color:var(--ink-2);border:1px solid var(--line);border-radius:50px;padding:.4rem .9rem;margin-bottom:1.8rem}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:clamp(2.8rem,6.4vw,4.8rem);letter-spacing:-.02em;margin-bottom:1.6rem}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lead{font-size:1.15rem;margin-bottom:2.4rem}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-visual{position:relative}
+.hero-photo{aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;position:relative;background:linear-gradient(160deg,#20242d,#363d49);box-shadow:var(--shadow)}
+.hero-photo svg.pat{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.hero-photo .tag{position:absolute;left:0;bottom:0;padding:1.6rem;color:#fff}
+.hero-photo .tag .k{font-family:'Fraunces';font-size:2.6rem;line-height:1}
+.hero-photo .tag .v{font-size:.85rem;color:rgba(255,255,255,.7);letter-spacing:.03em}
+.hero-float{position:absolute;top:1.3rem;right:-1rem;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:.9rem 1.1rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:.7rem}
+.hero-float svg{width:22px;height:22px;color:var(--accent)}
+.hero-float b{font-family:'Fraunces';font-size:1.05rem;display:block;line-height:1.1}
+.hero-float span{font-size:.72rem;color:var(--muted)}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.stats-in{display:grid;grid-template-columns:repeat(3,1fr);padding:2.6rem 0}
+.stat{text-align:center;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:15%;height:70%;width:1px;background:var(--line)}
+.stat .n{font-family:'Fraunces';font-size:clamp(2.2rem,4vw,3rem);line-height:1}
+.stat .n .p{color:var(--accent)}
+.stat .l{font-size:.85rem;color:var(--muted);letter-spacing:.04em;margin-top:.4rem}
+.srv-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.4rem}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.srv{background:var(--card);padding:2.6rem 2.2rem;transition:background .35s;position:relative}
+.srv:hover{background:var(--paper-2)}
+.srv .ic{width:40px;height:40px;color:var(--accent);margin-bottom:1.6rem}
+.srv .ic svg{width:100%;height:100%;stroke-width:1.3}
+.srv .num{position:absolute;top:1.6rem;right:1.8rem;font-family:'Fraunces';font-size:.95rem;color:var(--muted)}
+.srv h3{font-size:1.45rem;margin-bottom:.5rem}
+.srv p{color:var(--ink-2);font-size:.96rem}
+.about{background:var(--paper-2)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:center}
+.about-portrait{aspect-ratio:1/1;border-radius:var(--radius);background:linear-gradient(160deg,#20242d,#3a4250);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.about-portrait svg.pat{position:absolute;inset:0;width:100%;height:100%;opacity:.45}
+.about-portrait .nm{position:absolute;left:0;bottom:0;padding:1.8rem;color:#fff}
+.about-portrait .nm b{font-family:'Fraunces';font-size:1.5rem;display:block}
+.about-portrait .nm span{font-size:.82rem;color:rgba(255,255,255,.72);letter-spacing:.04em}
+.about-text p{color:var(--ink-2);margin-bottom:1.2rem;font-size:1.05rem}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:2.4rem}
+.val{display:flex;gap:.9rem}
+.val svg{width:22px;height:22px;color:var(--accent);flex-shrink:0;margin-top:.2rem;stroke-width:1.4}
+.val b{font-family:'Fraunces';font-weight:600;font-size:1.1rem;display:block;line-height:1.2}
+.val span{font-size:.9rem;color:var(--muted)}
+.filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.6rem 0 2.8rem}
+.fb{padding:.55rem 1.2rem;border-radius:50px;border:1px solid var(--line);background:transparent;color:var(--ink-2);font-family:'Inter';font-weight:500;font-size:.88rem;cursor:pointer;transition:.25s}
+.fb:hover{border-color:var(--ink)}
+.fb.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.work{border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;box-shadow:var(--shadow);transition:opacity .4s}
+.work .bg{position:absolute;inset:0;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.work:hover .bg{transform:scale(1.06)}
+.work .bg svg{width:100%;height:100%;opacity:.6}
+.work.w1 .bg{background:linear-gradient(150deg,#2a2420,#4a3b30)}
+.work.w2 .bg{background:linear-gradient(150deg,#1c2630,#2f4356)}
+.work.w3 .bg{background:linear-gradient(150deg,#212832,#3a4756)}
+.work.w4 .bg{background:linear-gradient(150deg,#2a2622,#473a2e)}
+.work.w5 .bg{background:linear-gradient(150deg,#1d2832,#2c4252)}
+.work.w6 .bg{background:linear-gradient(150deg,#222a33,#374758)}
+.work .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,12,16,.82),transparent 62%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;color:#fff}
+.work .ov .c{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.65);margin-bottom:.2rem}
+.work .ov h4{font-family:'Fraunces';font-size:1.25rem;font-weight:500}
+.work.hide{display:none}
+.reviews{background:var(--paper-2)}
+.rev-wrap{max-width:760px;margin:3.4rem auto 0;overflow:hidden}
+.rev-track{display:flex;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.rev-slide{min-width:100%;padding:0 .4rem;text-align:center}
+.rev-stars{display:inline-flex;gap:.2rem;color:var(--accent);margin-bottom:1.4rem}
+.rev-stars svg{width:18px;height:18px}
+.rev-q{font-family:'Fraunces';font-weight:400;font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.45;letter-spacing:-.01em;margin-bottom:1.8rem}
+.rev-who b{font-weight:600}
+.rev-who span{color:var(--muted);font-size:.9rem}
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-top:2.4rem}
+.rev-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.25s}
+.rev-arrow:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rev-arrow svg{width:16px;height:16px}
+.rev-dots{display:flex;gap:.5rem}
+.rev-dot{width:7px;height:7px;border-radius:50%;background:var(--line);cursor:pointer;transition:.3s}
+.rev-dot.active{background:var(--accent);width:22px;border-radius:4px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start;margin-top:3.4rem}
+.ci{margin-bottom:1.8rem;display:flex;gap:1rem;align-items:flex-start}
+.ci svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;margin-top:.3rem;stroke-width:1.5}
+.ci b{font-family:'Fraunces';font-size:1.05rem;display:block;line-height:1.3}
+.ci span{color:var(--ink-2);font-size:.95rem}
+.emergency{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:1.3rem 1.4rem;margin-top:2.2rem;background:var(--card)}
+.emergency .t{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:600}
+.emergency a{font-family:'Fraunces';font-size:1.5rem;display:inline-block;margin-top:.2rem}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.6rem,3.5vw,2.6rem);box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:.82rem;font-weight:600;color:var(--ink-2);margin-bottom:.4rem;letter-spacing:.01em}
+.field label .r{color:var(--accent)}
+.field input,.field select,.field textarea{
+  width:100%;padding:.8rem .95rem;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--paper);color:var(--ink);font-family:'Inter';font-size:.95rem;transition:.25s;
+}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.field.error input,.field.error select,.field.error textarea{border-color:#d14343}
+.field .em{color:#d14343;font-size:.78rem;margin-top:.3rem;display:none}
+.field.error .em{display:block}
+.form-submit{width:100%;justify-content:center;margin-top:.3rem}
+.form-success{display:none;text-align:center;padding:2.6rem 1rem}
+.form-success.show{display:block;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.form-success .ck{width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin:0 auto 1.2rem}
+.form-success .ck svg{width:30px;height:30px;stroke-width:2}
+.form-success h3{font-size:1.6rem;margin-bottom:.4rem}
+.form-success p{color:var(--ink-2)}
+.form-success .btn{margin-top:1.4rem}
+footer{background:var(--ink);color:var(--paper);padding:5rem 0 1.8rem}
+:root[data-theme="dark"] footer{background:#0b0d11}
+.f-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:2.6rem;margin-bottom:3.4rem}
+.f-brand .bt b{color:var(--paper)}
+.f-brand .bt span{color:rgba(255,255,255,.5)}
+.f-brand p{color:rgba(255,255,255,.55);font-size:.92rem;margin-top:1.2rem;max-width:30ch}
+.f-col h4{font-family:'Fraunces';font-weight:500;font-size:1.15rem;margin-bottom:1.2rem;color:var(--paper)}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.f-col a,.f-col li{color:rgba(255,255,255,.55);font-size:.92rem;transition:color .25s}
+.f-col a:hover{color:var(--accent)}
+.f-ci{display:flex;gap:.6rem;margin-bottom:.7rem;color:rgba(255,255,255,.55);font-size:.92rem}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.84rem;color:rgba(255,255,255,.4)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@media(max-width:920px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.8rem}
+  .hero-visual{max-width:420px}
+  .services{grid-template-columns:1fr 1fr}
+  .portfolio{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:78px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:.5rem 0;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .35s ease}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:1rem 5%;width:100%}
+  .burger{display:flex}
+  .nav-cta{display:none}
+}
+@media(max-width:560px){
+  .services,.portfolio,.form-row,.values{grid-template-columns:1fr}
+  .stat+.stat::before{display:none}
+  .stats-in{gap:1.6rem}
+  .hero-float{right:0}
+  .f-bottom{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav"><div class="wrap nav-in">
+  <a href="#home" class="brand">
+    <img src="public/logo.jpg" alt="Logo Termoidrica GS">
+    <span class="bt"><b>Termoidrica GS</b><span>Gerardo Settanni</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#chisiamo">Chi Siamo</a></li>
+    <li><a href="#lavori">Lavori</a></li>
+    <li><a href="#recensioni">Recensioni</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="tt" id="themeToggle" aria-label="Cambia tema"></button>
+    <a href="#contatti" class="btn btn-primary nav-cta">Preventivo</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div></nav>
+
+<header class="hero" id="home"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="hero-badge"><span class="dot"></span> Pronto intervento in tutta la Puglia</span>
+      <h1>Impianti termoidraulici fatti <em>a regola d'arte</em>.</h1>
+      <p class="lead">Caldaie, idraulica, climatizzazione e solare termico. Dal 2010 Gerardo Settanni porta precisione, pulizia e affidabilità in ogni intervento.</p>
+      <div class="hero-ctas">
+        <a href="#contatti" class="btn btn-accent">Richiedi un preventivo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#servizi" class="btn btn-line">I nostri servizi</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <svg class="pat" viewBox="0 0 400 500" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1">
+          <circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="80"/><circle cx="200" cy="200" r="40"/>
+          <path d="M200 60v280M60 200h280" stroke-dasharray="4 8"/>
+          <rect x="140" y="140" width="120" height="120" transform="rotate(45 200 200)"/>
+        </svg>
+        <div class="tag"><div class="k">15 anni</div><div class="v">di comfort garantito nelle case pugliesi</div></div>
+      </div>
+      <div class="hero-float">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke-width="1.5"/></svg>
+        <div><b>Garanzia</b><span>su ogni lavoro</span></div>
+      </div>
+    </div>
+  </div>
+</div></header>
+
+<div class="stats"><div class="wrap stats-in">
+  <div class="stat reveal"><div class="n" data-count="15"><span class="p">+</span></div><div class="l">Anni di esperienza</div></div>
+  <div class="stat reveal d1"><div class="n" data-count="800"><span class="p">+</span></div><div class="l">Clienti soddisfatti</div></div>
+  <div class="stat reveal d2"><div class="n" data-count="2500"><span class="p">+</span></div><div class="l">Interventi eseguiti</div></div>
+</div></div>
+
+<section id="servizi"><div class="wrap">
+  <div class="srv-head">
+    <div class="reveal">
+      <span class="eyebrow">Servizi</span>
+      <h2 class="h-section">Tutto ciò che serve al tuo impianto</h2>
+    </div>
+    <p class="lead reveal d1">Un unico interlocutore, dall'installazione alla manutenzione, con materiali certificati e lavori garantiti.</p>
+  </div>
+  <div class="services reveal">
+    <div class="srv"><span class="num">01</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2c1.5 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1.2.5-2.3 1.2-3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22a6 6 0 0 0 6-6c0-2-1-3.5-2-5" stroke-linecap="round"/><path d="M12 22a6 6 0 0 1-6-6c0-1.4.5-2.6 1.2-3.7" stroke-linecap="round"/></svg></div><h3>Caldaie</h3><p>Installazione, sostituzione e manutenzione di caldaie a condensazione ad alta efficienza.</p></div>
+    <div class="srv"><span class="num">02</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 3v6a4 4 0 0 0 4 4 4 4 0 0 0 4-4V3" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 13v8" stroke-linecap="round"/><circle cx="12" cy="21" r="1"/><path d="M6 3h4M14 3h4" stroke-linecap="round"/></svg></div><h3>Impianti idraulici</h3><p>Realizzazione e riparazione di impianti idrici, scarichi, tubazioni e distribuzione.</p></div>
+    <div class="srv"><span class="num">03</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg></div><h3>Climatizzazione</h3><p>Montaggio e assistenza di climatizzatori e pompe di calore per il comfort tutto l'anno.</p></div>
+    <div class="srv"><span class="num">04</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"/></svg></div><h3>Solare termico</h3><p>Sistemi solari per acqua calda sanitaria: energia pulita e risparmio in bolletta.</p></div>
+    <div class="srv"><span class="num">05</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.5"/></svg></div><h3>Rifacimento bagno</h3><p>Ristrutturazione completa del bagno, dall'impianto ai sanitari, chiavi in mano.</p></div>
+    <div class="srv"><span class="num">06</span><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a2 2 0 0 0 2.8 2.8l6-6a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.8-2.8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Pronto intervento</h3><p>Perdite, guasti e urgenze: interveniamo rapidamente per risolvere ogni emergenza.</p></div>
+  </div>
+</div></section>
+
+<section id="chisiamo" class="about"><div class="wrap">
+  <div class="about-grid">
+    <div class="about-portrait reveal">
+      <svg class="pat" viewBox="0 0 400 400" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1">
+        <path d="M0 300 Q100 250 200 300 T400 300" /><path d="M0 340 Q100 290 200 340 T400 340"/>
+        <circle cx="200" cy="150" r="70"/><circle cx="200" cy="150" r="46"/>
+      </svg>
+      <div class="nm"><b>Gerardo Settanni</b><span>Titolare & tecnico specializzato</span></div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow reveal">Chi siamo</span>
+      <h2 class="h-section reveal d1">Un artigiano, non un call center</h2>
+      <p class="reveal d1">Termoidrica GS nasce dalla passione di Gerardo Settanni per il mestiere. Operiamo in tutta la Puglia con soluzioni su misura per abitazioni, attività commerciali e industrie.</p>
+      <p class="reveal d2">Ogni intervento porta la firma del titolare: impianti sicuri, efficienti e duraturi, con un rapporto diretto e trasparente dall'inizio alla fine.</p>
+      <div class="values reveal d2">
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l2.5 6.5L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-.5z" stroke-linejoin="round"/></svg><div><b>Affidabilità</b><span>Puntualità e lavori a regola d'arte</span></div></div>
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" stroke-linejoin="round"/></svg><div><b>Trasparenza</b><span>Preventivi chiari, nessuna sorpresa</span></div></div>
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg><div><b>Puntualità</b><span>Tempi concordati e rispettati</span></div></div>
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linejoin="round"/></svg><div><b>Assistenza</b><span>Ti seguiamo anche dopo il lavoro</span></div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="lavori"><div class="wrap">
+  <div class="center reveal">
+    <span class="eyebrow">Portfolio</span>
+    <h2 class="h-section">Lavori realizzati</h2>
+    <p class="lead">Una selezione degli interventi più recenti. La qualità parla da sola.</p>
+  </div>
+  <div class="filters reveal">
+    <button class="fb active" data-filter="all">Tutti</button>
+    <button class="fb" data-filter="riscaldamento">Riscaldamento</button>
+    <button class="fb" data-filter="idraulica">Idraulica</button>
+    <button class="fb" data-filter="climatizzazione">Climatizzazione</button>
+  </div>
+  <div class="portfolio" id="portfolio">
+    <div class="work w1 reveal" data-cat="riscaldamento"><div class="bg"></div><div class="ov"><span class="c">Riscaldamento</span><h4>Caldaia a condensazione</h4></div></div>
+    <div class="work w2 reveal d1" data-cat="idraulica"><div class="bg"></div><div class="ov"><span class="c">Idraulica</span><h4>Nuovo impianto idrico</h4></div></div>
+    <div class="work w3 reveal d2" data-cat="climatizzazione"><div class="bg"></div><div class="ov"><span class="c">Climatizzazione</span><h4>Impianto multisplit</h4></div></div>
+    <div class="work w4 reveal" data-cat="riscaldamento"><div class="bg"></div><div class="ov"><span class="c">Riscaldamento</span><h4>Riscaldamento a pavimento</h4></div></div>
+    <div class="work w5 reveal d1" data-cat="idraulica"><div class="bg"></div><div class="ov"><span class="c">Idraulica</span><h4>Ristrutturazione bagno</h4></div></div>
+    <div class="work w6 reveal d2" data-cat="climatizzazione"><div class="bg"></div><div class="ov"><span class="c">Climatizzazione</span><h4>Pompa di calore</h4></div></div>
+  </div>
+</div></section>
+
+<section id="recensioni" class="reviews"><div class="wrap">
+  <div class="center reveal">
+    <span class="eyebrow">Recensioni</span>
+    <h2 class="h-section">La voce dei clienti</h2>
+  </div>
+  <div class="rev-wrap reveal">
+    <div class="rev-track" id="revTrack">
+      <div class="rev-slide"><div class="rev-stars"></div><p class="rev-q">"Gerardo ha sostituito la mia vecchia caldaia in una mattinata. Lavoro impeccabile, pulizia e prezzo onesto."</p><div class="rev-who"><b>Maria Rossi</b> · <span>Bari</span></div></div>
+      <div class="rev-slide"><div class="rev-stars"></div><p class="rev-q">"Perdita d'acqua di domenica sera, arrivato in meno di un'ora. Serietà e competenza rare. Ora è il nostro idraulico di fiducia."</p><div class="rev-who"><b>Antonio Ferri</b> · <span>Modugno</span></div></div>
+      <div class="rev-slide"><div class="rev-stars"></div><p class="rev-q">"Climatizzazione in tutta la casa: preventivo chiaro, tempi rispettati e un risultato perfetto. Professionisti veri."</p><div class="rev-who"><b>Lucia Carbone</b> · <span>Bitonto</span></div></div>
+      <div class="rev-slide"><div class="rev-stars"></div><p class="rev-q">"Ho rifatto il bagno completamente. Seguiti con attenzione dall'inizio alla fine, materiali ottimi. Grazie Termoidrica GS!"</p><div class="rev-who"><b>Giuseppe Palmieri</b> · <span>Giovinazzo</span></div></div>
+    </div>
+    <div class="rev-nav">
+      <button class="rev-arrow" id="revPrev" aria-label="Precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="rev-arrow" id="revNext" aria-label="Successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</div></section>
+
+<section id="contatti"><div class="wrap">
+  <div class="center reveal">
+    <span class="eyebrow">Contatti</span>
+    <h2 class="h-section">Parliamo del tuo progetto</h2>
+    <p class="lead">Compila il modulo o chiamaci: preventivo gratuito e senza impegno.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Dove operiamo</b><span>Puglia — Bari e provincia</span></div></div>
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linejoin="round"/></svg><div><b>Telefono</b><span>+39 000 000 0000</span></div></div>
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>Email</b><span>info@termoidricags.it</span></div></div>
+      <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg><div><b>Orari</b><span>Lun–Sab · 8:00 – 19:00</span></div></div>
+      <div class="emergency">
+        <div class="t">Emergenza idraulica</div>
+        <div style="color:var(--ink-2);font-size:.92rem">Siamo reperibili per interventi urgenti</div>
+        <a href="tel:+390000000000">+39 000 000 0000</a>
+      </div>
+    </div>
+    <div class="form-card reveal d1">
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field"><label>Nome <span class="r">*</span></label><input type="text" name="nome" placeholder="Il tuo nome"><div class="em">Inserisci il nome</div></div>
+          <div class="field"><label>Cognome <span class="r">*</span></label><input type="text" name="cognome" placeholder="Il tuo cognome"><div class="em">Inserisci il cognome</div></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Telefono <span class="r">*</span></label><input type="tel" name="telefono" placeholder="es. 333 1234567"><div class="em">Inserisci un telefono valido</div></div>
+          <div class="field"><label>Email <span class="r">*</span></label><input type="email" name="email" placeholder="tua@email.it"><div class="em">Inserisci un'email valida</div></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Tipo di intervento <span class="r">*</span></label>
+            <select name="intervento"><option value="">Seleziona...</option><option>Caldaie</option><option>Impianti idraulici</option><option>Climatizzazione</option><option>Solare termico</option><option>Rifacimento bagno</option><option>Pronto intervento</option><option>Altro</option></select>
+            <div class="em">Seleziona un intervento</div></div>
+          <div class="field"><label>Comune <span class="r">*</span></label><input type="text" name="comune" placeholder="es. Bari"><div class="em">Inserisci il comune</div></div>
+        </div>
+        <div class="field"><label>Messaggio</label><textarea name="messaggio" placeholder="Descrivi di cosa hai bisogno..."></textarea></div>
+        <button type="submit" class="btn btn-primary form-submit">Invia richiesta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14M13 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Richiesta inviata</h3>
+        <p>Grazie per averci contattato. Ti risponderemo al più presto per il tuo preventivo gratuito.</p>
+        <button class="btn btn-line" id="resetForm">Invia un'altra richiesta</button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="f-grid">
+    <div class="f-brand">
+      <a href="#home" class="brand"><img src="public/logo.jpg" alt="Logo Termoidrica GS"><span class="bt"><b>Termoidrica GS</b><span>Gerardo Settanni</span></span></a>
+      <p>Impianti termoidraulici, caldaie e climatizzazione in Puglia. Comfort e professionalità per la tua casa.</p>
+    </div>
+    <div class="f-col"><h4>Naviga</h4><ul><li><a href="#servizi">Servizi</a></li><li><a href="#chisiamo">Chi Siamo</a></li><li><a href="#lavori">Lavori</a></li><li><a href="#recensioni">Recensioni</a></li><li><a href="#contatti">Contatti</a></li></ul></div>
+    <div class="f-col"><h4>Servizi</h4><ul><li>Caldaie</li><li>Impianti idraulici</li><li>Climatizzazione</li><li>Solare termico</li><li>Pronto intervento</li></ul></div>
+    <div class="f-col"><h4>Contatti</h4><div class="f-ci">Puglia — Bari e provincia</div><div class="f-ci">+39 000 000 0000</div><div class="f-ci">info@termoidricags.it</div><div class="f-ci">Lun–Sab · 8:00–19:00</div></div>
+  </div>
+  <div class="f-bottom"><span>© <span id="year"></span> Termoidrica GS di Gerardo Settanni</span><span>P.IVA 00000000000</span></div>
+</div></footer>
+
+<script>
+const root=document.documentElement,tt=document.getElementById('themeToggle');
+const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4" stroke-width="1.6"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-width="1.6" stroke-linejoin="round"/></svg>';
+const saved=localStorage.getItem('tig-theme');if(saved)root.setAttribute('data-theme',saved);
+function syncIcon(){const dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);tt.innerHTML=dark?sun:moon;}
+syncIcon();
+tt.addEventListener('click',()=>{const cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');const next=cur==='dark'?'light':'dark';root.setAttribute('data-theme',next);localStorage.setItem('tig-theme',next);syncIcon();});
+const nav=document.getElementById('nav'),burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+burger.addEventListener('click',()=>{burger.classList.toggle('open');navLinks.classList.toggle('open');});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');navLinks.classList.remove('open');}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+let counted=false;const strip=document.querySelector('.stats');
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!counted){counted=true;document.querySelectorAll('.n').forEach(el=>{const t=+el.dataset.count,p=el.querySelector('.p')?.outerHTML||'';let c=0,s=Math.max(1,Math.ceil(t/55));const iv=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(iv);}el.innerHTML=c.toLocaleString('it-IT')+p;},22);});}}),{threshold:.5});
+if(strip)cio.observe(strip);
+const fbs=document.querySelectorAll('.fb'),works=document.querySelectorAll('.work');
+fbs.forEach(b=>b.addEventListener('click',()=>{fbs.forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;works.forEach(w=>w.classList.toggle('hide',!(f==='all'||w.dataset.cat===f)));}));
+const starSvg='<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.7L12 17.3 5.8 20.8l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>';
+document.querySelectorAll('.rev-stars').forEach(s=>s.innerHTML=starSvg.repeat(5));
+const track=document.getElementById('revTrack'),dotsWrap=document.getElementById('revDots'),slides=track.children.length;let idx=0;
+for(let i=0;i<slides;i++){const d=document.createElement('button');d.className='rev-dot'+(i===0?' active':'');d.addEventListener('click',()=>go(i));dotsWrap.appendChild(d);}
+const dots=dotsWrap.children;
+function go(i){idx=(i+slides)%slides;track.style.transform=`translateX(-${idx*100}%)`;[...dots].forEach((d,k)=>d.classList.toggle('active',k===idx));}
+document.getElementById('revNext').addEventListener('click',()=>go(idx+1));
+document.getElementById('revPrev').addEventListener('click',()=>go(idx-1));
+let auto=setInterval(()=>go(idx+1),6000);
+track.addEventListener('mouseenter',()=>clearInterval(auto));
+track.addEventListener('mouseleave',()=>auto=setInterval(()=>go(idx+1),6000));
+const form=document.getElementById('contactForm'),success=document.getElementById('formSuccess');
+const setErr=(el,on)=>el.closest('.field').classList.toggle('error',on);
+form.addEventListener('submit',e=>{e.preventDefault();let ok=true;const c=(el,v)=>{setErr(el,!v);if(!v)ok=false;};
+  c(form.nome,form.nome.value.trim().length>=2);c(form.cognome,form.cognome.value.trim().length>=2);
+  c(form.telefono,/^[\d\s+()\/.-]{6,}$/.test(form.telefono.value.trim()));
+  c(form.email,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()));
+  c(form.intervento,form.intervento.value!=='');c(form.comune,form.comune.value.trim().length>=2);
+  if(ok){form.style.display='none';success.classList.add('show');}else{form.querySelector('.field.error input,.field.error select')?.focus();}});
+form.querySelectorAll('input,select,textarea').forEach(el=>{el.addEventListener('input',()=>setErr(el,false));el.addEventListener('change',()=>setErr(el,false));});
+document.getElementById('resetForm').addEventListener('click',()=>{form.reset();form.style.display='block';success.classList.remove('show');form.querySelectorAll('.field').forEach(f=>f.classList.remove('error'));});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

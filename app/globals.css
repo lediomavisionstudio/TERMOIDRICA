@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-oswald: "Oswald", system-ui, sans-serif;
+  --font-space: "Space Grotesk", monospace;
+}
+
+/* Lenis smooth scroll (see components/LenisProvider.tsx) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@layer base {
+  html {
+    /* Lenis gestisce lo smooth scroll via JS; nativo su auto per evitare conflitti */
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold uppercase tracking-tight text-ink;
+  }
+
+  ::selection {
+    @apply bg-fire-500/30 text-ink;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-brand-700 hover:shadow-card-hover;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-flame-500 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-300 hover:bg-flame-600;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-ink-700 transition-all duration-300 hover:border-brand-400 hover:text-brand-600;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal-500;
+  }
+  .section-eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-gradient-to-r from-teal-500 to-transparent;
+  }
+
+  /* ---- Pulsanti premium ---- */
+  .btn-fire {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-fire-gradient px-8 py-4 text-sm font-semibold text-white shadow-glow-fire transition-transform duration-300 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  /* shimmer che attraversa il bottone */
+  .btn-fire::after {
+    content: "";
+    @apply pointer-events-none absolute inset-y-0 left-0 w-1/3 -skew-x-12 bg-white/25 blur-md;
+    transform: translateX(-180%);
+  }
+  .btn-fire:hover::after {
+    animation: shimmer 1.1s ease-in-out;
+  }
+
+  .btn-ghost-light {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full border border-white/35 px-8 py-4 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/10;
+  }
+
+  /* ---- Glass ---- */
+  .glass-dark {
+    background: rgba(13, 27, 42, 0.85);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+
+  /* underline animato nav (width 0 -> 100%) */
+  .nav-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-fire-gradient transition-all duration-300;
+  }
+  .nav-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+/* ---- Pagine legali (Privacy / Cookie) ---- */
+.legal-content h2 {
+  @apply mt-10 text-xl text-ink sm:text-2xl;
+}
+.legal-content h3 {
+  @apply mt-6 text-base font-semibold uppercase tracking-wide text-ink;
+}
+.legal-content p {
+  @apply mt-4 leading-relaxed text-ink-500;
+}
+.legal-content ul {
+  @apply mt-4 space-y-2 pl-5;
+}
+.legal-content li {
+  @apply list-disc leading-relaxed text-ink-500 marker:text-fire-500;
+}
+.legal-content a {
+  @apply font-medium text-fire-600 underline underline-offset-2 hover:text-fire-700;
+}
+.legal-content strong {
+  @apply font-semibold text-ink;
+}
+
+/* ---- Scroll progress bar (top page) ---- */
+.scroll-progress {
+  @apply fixed inset-x-0 top-0 z-[600] h-[3px] origin-left bg-fire-gradient;
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef4fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3d6e6;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0c6ca6;
+}
+
+/* WhatsApp FAB pulse ring */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+.whatsapp-fab {
+  animation: whatsapp-pulse 3s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -15,24 +15,20 @@ const SECTION_IDS = NAV_LINKS.map((l) => l.href.replace("#", ""));
 
 export default function Navbar() {
   const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const active = useActiveSection(SECTION_IDS);
 
+  // Navbar sempre fissa in alto: aggiorniamo solo lo stato "scrolled"
+  // per attivare il vetro glass-dark dopo lo scroll.
   useMotionValueEvent(scrollY, "change", (y) => {
-    const prev = scrollY.getPrevious() ?? 0;
     setScrolled(y > 20);
-    setHidden(y > prev && y > 120 && !open);
   });
 
   const phoneHref = `tel:${COMPANY.phone.replace(/\s/g, "")}`;
 
   return (
-    <motion.header
-      initial={{ y: 0 }}
-      animate={{ y: hidden ? "-100%" : "0%" }}
-      transition={{ type: "spring", stiffness: 320, damping: 30 }}
+    <header
       className={`fixed inset-x-0 top-0 z-[500] transition-all duration-500 ${
         scrolled || open
           ? "glass-dark border-b border-white/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]"
@@ -157,6 +153,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }

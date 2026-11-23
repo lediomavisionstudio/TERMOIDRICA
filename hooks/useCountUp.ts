@@ -67,7 +67,10 @@ export function useCountUp<T extends HTMLElement = HTMLElement>({
           }
         });
       },
-      { threshold: 0.4 }
+      // threshold 0 + rootMargin inferiore POSITIVO: estende il viewport verso
+      // il basso del 15%, così il count-up scatta appena la sezione sta per
+      // entrare (anziché a metà visibile). Niente più "0+" quando è visibile.
+      { threshold: 0, rootMargin: "0px 0px 15% 0px" }
     );
 
     observer.observe(el);

@@ -65,7 +65,7 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-night-900 pt-[72px] lg:pt-[100px]"
+      className="relative flex min-h-[85svh] items-center overflow-hidden bg-night-900 pt-[72px] lg:min-h-[80vh] lg:pt-[100px]"
     >
       {/* Sfondo con parallax (solo desktop) */}
       <motion.div
@@ -90,7 +90,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute top-24 right-1/3 hidden h-80 w-80 rounded-full bg-teal-500/10 blur-[120px] sm:block" />
 
       {/* Contenuto */}
-      <div className="container-x relative z-10 py-12 sm:py-20">
+      <div className="container-x relative z-10 py-8 sm:py-12">
         <motion.div
           variants={container}
           initial="hidden"
@@ -98,7 +98,7 @@ export default function Hero() {
           className="max-w-2xl"
         >
           {/* Titolo con reveal parola per parola */}
-          <h1 className="font-display text-[2.6rem] font-semibold uppercase leading-[1.02] tracking-tight text-white sm:text-6xl sm:leading-[0.98] lg:text-7xl">
+          <h1 className="font-display text-[1.9rem] font-semibold uppercase leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl">
             <span className="flex flex-wrap gap-x-4">
               {TITLE_WORDS.map((w, i) => (
                 <span key={i} className="overflow-hidden py-0.5">
@@ -120,7 +120,7 @@ export default function Hero() {
 
           <motion.p
             variants={wordUp}
-            className="mt-5 max-w-xl text-base font-sans normal-case leading-relaxed text-white/75 sm:mt-7 sm:text-lg"
+            className="mt-4 max-w-xl text-sm font-sans normal-case leading-relaxed text-white/75 sm:mt-5 sm:text-base"
           >
             {COMPANY.name} di {COMPANY.owner} realizza impianti idraulici,
             termici e di climatizzazione per privati e aziende in tutta la{" "}
@@ -128,7 +128,7 @@ export default function Hero() {
           </motion.p>
 
           {/* Bullet points con icone custom */}
-          <motion.ul variants={wordUp} className="mt-7 space-y-3 sm:mt-9 sm:space-y-3.5">
+          <motion.ul variants={wordUp} className="mt-5 space-y-2.5 sm:mt-6">
             {POINTS.map((p) => (
               <li key={p.label} className="flex items-center gap-3.5 text-white/90">
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${p.color}`}>
@@ -136,7 +136,7 @@ export default function Hero() {
                     {p.icon}
                   </svg>
                 </span>
-                <span className="text-sm font-medium sm:text-base">{p.label}</span>
+                <span className="text-sm font-medium">{p.label}</span>
               </li>
             ))}
           </motion.ul>

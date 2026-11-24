@@ -115,10 +115,6 @@ const config: Config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
-        shimmer: {
-          "0%": { transform: "translateX(-120%)" },
-          "100%": { transform: "translateX(220%)" },
-        },
         "bounce-down": {
           "0%, 100%": { transform: "translateY(0)", opacity: "1" },
           "50%": { transform: "translateY(8px)", opacity: "0.5" },
@@ -127,7 +123,6 @@ const config: Config = {
       animation: {
         float: "float 6s ease-in-out infinite",
         marquee: "marquee 30s linear infinite",
-        shimmer: "shimmer 2.5s ease-in-out infinite",
         "bounce-down": "bounce-down 1.8s ease-in-out infinite",
       },
     },

@@ -49,8 +49,6 @@ export default function Hero() {
   // Parallax: lo sfondo scorre più lento del contenuto
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
   const bgScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.2]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   // Il parallax (trasformazioni legate allo scroll) è costoso su mobile e causa
   // lag: lo attiviamo solo da desktop (>=768px). Su mobile l'hero resta statico.
@@ -92,10 +90,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute top-24 right-1/3 hidden h-80 w-80 rounded-full bg-teal-500/10 blur-[120px] sm:block" />
 
       {/* Contenuto */}
-      <motion.div
-        style={parallax ? { y: contentY, opacity: contentOpacity } : undefined}
-        className="container-x relative z-10 py-12 sm:py-20"
-      >
+      <div className="container-x relative z-10 py-12 sm:py-20">
         <motion.div
           variants={container}
           initial="hidden"
@@ -145,24 +140,8 @@ export default function Hero() {
               </li>
             ))}
           </motion.ul>
-
-          {/* CTA */}
-          <motion.div variants={wordUp} className="mt-9 flex flex-col gap-3 sm:mt-11 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-            <a href="#contatti" className="btn-fire w-full justify-center text-base sm:w-auto">
-              Richiedi un preventivo
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-            <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="btn-ghost-light w-full justify-center text-base sm:w-auto">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-                <path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2a12 12 0 0 1-6-6l2-2-2-5-4 2Z" strokeLinejoin="round" />
-              </svg>
-              {COMPANY.phone}
-            </a>
-          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Scroll indicator */}
       <motion.a

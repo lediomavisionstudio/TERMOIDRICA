@@ -65,7 +65,7 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative flex min-h-[85svh] items-center overflow-hidden bg-night-900 pt-[72px] lg:min-h-[80vh] lg:pt-[100px]"
+      className="relative flex min-h-0 items-start overflow-hidden bg-night-900 py-32 pt-[72px] sm:py-40 lg:py-48 lg:pt-[100px]"
     >
       {/* Sfondo con parallax (solo desktop) */}
       <motion.div
@@ -98,7 +98,7 @@ export default function Hero() {
           className="max-w-2xl"
         >
           {/* Titolo con reveal parola per parola */}
-          <h1 className="font-display text-[1.9rem] font-semibold uppercase leading-[1.08] tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h1 className="font-display text-[2.2rem] font-semibold uppercase leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
             <span className="flex flex-wrap gap-x-4">
               {TITLE_WORDS.map((w, i) => (
                 <span key={i} className="overflow-hidden py-0.5">
@@ -120,7 +120,7 @@ export default function Hero() {
 
           <motion.p
             variants={wordUp}
-            className="mt-4 max-w-xl text-sm font-sans normal-case leading-relaxed text-white/75 sm:mt-5 sm:text-base"
+            className="mt-6 max-w-2xl text-sm font-sans normal-case leading-relaxed text-white/75 sm:mt-8 sm:text-base"
           >
             {COMPANY.name} di {COMPANY.owner} realizza impianti idraulici,
             termici e di climatizzazione per privati e aziende in tutta la{" "}
@@ -128,7 +128,7 @@ export default function Hero() {
           </motion.p>
 
           {/* Bullet points con icone custom */}
-          <motion.ul variants={wordUp} className="mt-5 space-y-2.5 sm:mt-6">
+          <motion.ul variants={wordUp} className="mt-8 space-y-4 sm:mt-10">
             {POINTS.map((p) => (
               <li key={p.label} className="flex items-center gap-3.5 text-white/90">
                 <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${p.color}`}>
